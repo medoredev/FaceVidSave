@@ -85,7 +85,7 @@ export default function Home() {
               Download videos in high quality with just a few clicks.
             </p>
             <p className="mt-2">
-              Made by Jaymar • Powered by Rapido API
+              Made by Jaymar
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, ExternalLink, Loader2 } from "lucide-react";
+import { Download, ExternalLink, Loader2, Play } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface VideoData {
@@ -17,6 +17,7 @@ interface VideoPreviewProps {
 
 export function VideoPreview({ videoData }: VideoPreviewProps) {
   const [isDownloading, setIsDownloading] = useState(false);
+  const [showPlayer, setShowPlayer] = useState(false);
   const { toast } = useToast();
 
   const handleDownload = async () => {
@@ -58,14 +59,36 @@ export function VideoPreview({ videoData }: VideoPreviewProps) {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex flex-col md:flex-row gap-4">
-          {/* Thumbnail */}
+          {/* Video Player / Thumbnail */}
           <div className="flex-shrink-0">
-            <img
-              src={videoData.thumbnail}
-              alt="Video thumbnail"
-              className="w-full md:w-40 h-32 object-cover rounded-md border"
-              data-testid="img-thumbnail"
-            />
+            {showPlayer ? (
+              <video
+                controls
+                className="w-full md:w-40 h-32 object-cover rounded-md border"
+                src={videoData.url}
+                poster={videoData.thumbnail}
+                data-testid="video-player"
+              >
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <div className="relative">
+                <img
+                  src={videoData.thumbnail}
+                  alt="Video thumbnail"
+                  className="w-full md:w-40 h-32 object-cover rounded-md border"
+                  data-testid="img-thumbnail"
+                />
+                <Button
+                  size="icon"
+                  className="absolute inset-0 m-auto w-12 h-12 bg-black/60 hover:bg-black/80 border-white/20"
+                  onClick={() => setShowPlayer(true)}
+                  data-testid="button-play"
+                >
+                  <Play className="w-6 h-6 text-white fill-white" />
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Video Info */}

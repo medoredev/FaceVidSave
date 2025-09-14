@@ -1,5 +1,6 @@
 import { VideoDownloader } from "@/components/VideoDownloader";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiFacebook } from "react-icons/si";
 
 export default function Home() {
   return (
@@ -9,8 +10,8 @@ export default function Home() {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">FB</span>
+              <div className="w-8 h-8 bg-[#1877F2] rounded-md flex items-center justify-center">
+                <SiFacebook className="w-5 h-5 text-white" />
               </div>
               <h1 className="text-xl font-semibold text-foreground">
                 Facebook Video Downloader
@@ -84,7 +85,7 @@ export default function Home() {
               Download videos in high quality with just a few clicks.
             </p>
             <p className="mt-2">
-              Powered by Rapido API • Built with ❤️ for easy video downloads
+              Made by Jaymar • Powered by Rapido API
             </p>
           </div>
         </div>

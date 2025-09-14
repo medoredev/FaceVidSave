@@ -45,7 +45,7 @@ export function VideoDownloader() {
     setVideoData(null);
 
     try {
-      const response = await fetch(`https://jaymar.zetsu.xyz/api/fbdl?url=${encodeURIComponent(url)}`);
+      const response = await fetch(`https://rapido.zetsu.xyz/api/fbdl?url=${encodeURIComponent(url)}`);
       
       if (!response.ok) {
         throw new Error("Failed to process video. Please check the URL and try again.");

@@ -59,7 +59,6 @@ export function VideoPreview({ videoData }: VideoPreviewProps) {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex flex-col md:flex-row gap-4">
-          {/* Video Player / Thumbnail */}
           <div className="flex-shrink-0">
             {showPlayer ? (
               <video
@@ -91,18 +90,16 @@ export function VideoPreview({ videoData }: VideoPreviewProps) {
             )}
           </div>
 
-          {/* Video Info */}
           <div className="flex-1 space-y-3">
             <div>
               <h3 className="font-medium text-foreground leading-tight" data-testid="text-title">
                 {videoData.title}
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
-                Processed by {videoData.operator}
+                Processed by Jaymar
               </p>
             </div>
 
-            {/* Download Actions */}
             <div className="flex flex-col sm:flex-row gap-2">
               <Button 
                 onClick={handleDownload}

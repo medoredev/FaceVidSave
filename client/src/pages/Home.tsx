@@ -5,7 +5,6 @@ import { SiFacebook } from "react-icons/si";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
       <header className="border-b bg-card/50 backdrop-blur-sm sticky top-0 z-50">
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
@@ -22,7 +21,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-foreground mb-3">
@@ -34,10 +32,8 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Video Downloader Component */}
         <VideoDownloader />
 
-        {/* Instructions */}
         <div className="mt-12 max-w-4xl mx-auto">
           <h3 className="text-xl font-semibold text-foreground mb-4 text-center">
             How to Download Facebook Videos
@@ -76,7 +72,6 @@ export default function Home() {
         </div>
       </main>
 
-      {/* Footer */}
       <footer className="border-t bg-card/30 mt-16">
         <div className="container mx-auto px-4 py-6">
           <div className="text-center text-sm text-muted-foreground">
